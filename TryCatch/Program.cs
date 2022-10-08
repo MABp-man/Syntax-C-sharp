@@ -1,16 +1,16 @@
-﻿Console.clear();
-int = x, y;
+﻿Console.Clear();
+int X, Y;
 
 try
 {
     Console.Write("Введите координату X: ");
-    x = int.Parse(Console.Readline() ?? "");
+    X = int.Parse(Console.ReadLine() ?? "");
 
     Console.Write("Введите координату Y: ");
-    y = int.Parse(Console.Readline() ?? "");
+    Y = int.Parse(Console.ReadLine() ?? "");
 }
 catch (Exception exc)
 {
-    Console.Writeline($"Ошибка ввода данных: {exc.Message}");
+    Console.WriteLine($"Ошибка ввода данных: {exc.Message}");
     return;
 }
