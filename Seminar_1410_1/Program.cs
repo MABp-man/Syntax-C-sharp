@@ -1,6 +1,8 @@
 ﻿Console.Clear();
 int N = NumberInput("Введите целое положительное число: ","Ошибка ввода!");
 Console.WriteLine($"{N} => {GetSumN(N)}");
+Console.WriteLine($"{N} => {GetDigitAmount(N)}");
+Console.WriteLine($"{N} => {GetFactorialN(N)}");
 
 /////////////////////
 
@@ -26,4 +28,25 @@ static int GetSumN(int N)
         sumN = sumN + i;
     }
     return sumN;
+}
+
+///////////////////
+
+static int GetDigitAmount(int N)
+{
+    int digitAmount = 1;
+    for (; N > 9; N = N / 10, digitAmount++);
+    return digitAmount;
+}
+
+/////////////////
+
+static int GetFactorialN(int N)
+{
+    int factorialN = 1;
+    for (int i = N; i > 1; i--)
+    {
+        factorialN = factorialN * i;
+    }
+    return factorialN;
 }
