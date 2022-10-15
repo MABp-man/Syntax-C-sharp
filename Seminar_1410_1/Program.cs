@@ -3,6 +3,7 @@ int N = NumberInput("Введите целое положительное чис
 Console.WriteLine($"{N} => {GetSumN(N)}");
 Console.WriteLine($"{N} => {GetDigitAmount(N)}");
 Console.WriteLine($"{N} => {GetFactorialN(N)}");
+Console.WriteLine(ArrayRandom01());
 
 /////////////////////
 
@@ -49,4 +50,17 @@ static int GetFactorialN(int N)
         factorialN = factorialN * i;
     }
     return factorialN;
+}
+///////////////////////
+
+static string ArrayRandom01()
+{
+    int[] Array01 = new int[8];
+    for (int i = 0; i < 8; i++)
+    {
+        Array01[i] = new Random().Next(0,2);
+    }
+    string array01 = string.Join(",", Array01);
+
+    return array01;
 }
