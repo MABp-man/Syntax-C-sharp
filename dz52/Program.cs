@@ -9,7 +9,8 @@ Console.Clear();
 // int[,] newArray = {{1, 4, 7 ,2}, {5, 9, 2, 3}, {8, 4, 2, 4},};  // строка для проверки
 int[,] newArray = NewRandom2DArray(4, 4, -100, 101);
 Print2DArray(newArray);
-Print2DArrayColumnAverage(newArray);
+double[] result = ArrayColumnAverage(newArray);
+PrintResultArray("Среднее арифметическое каждого столбца: ", result);
 
 ////////////////////////
 static int[,] NewRandom2DArray(int rows, int columns, int from, int to)
@@ -41,22 +42,26 @@ static void Print2DArray(int[,] array)
 
 //////////////////////
 
-static void Print2DArrayColumnAverage(int[,] array)
+static double[] ArrayColumnAverage(int[,] array1)
 {
-    Console.WriteLine();
-    Console.Write("Среднее арифметическое каждого столбца: ");
-    for (int i = 0; i < array.GetLength(1); i++)
+    double[] resultArray = new double[array1.GetLength(1)];
+    for (int i = 0; i < array1.GetLength(1); i++)
     {
         double sum = 0;
-        for (int j = 0; j < array.GetLength(0); j++)
+        for (int j = 0; j < array1.GetLength(0); j++)
         {
-           sum += array[j, i];
+           sum += array1[j, i];
         }
-        if (i == array.GetLength(1) - 1)
-        {
-           Console.Write($"{sum / array.GetLength(0)}.");
-           break;
-        }
-        Console.Write($"{sum / array.GetLength(0)}; ");
+        resultArray[i] = sum / array1.GetLength(0);
     }    
+    return resultArray;
+}
+
+//////////////////////////
+
+static void PrintResultArray(string message, double[] array2)
+{
+    Console.WriteLine();
+    Console.Write(message);
+    Console.WriteLine(string.Join(", ", array2));
 }

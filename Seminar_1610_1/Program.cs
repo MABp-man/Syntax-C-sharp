@@ -44,14 +44,14 @@ static void ReversArray(int[] array)
 }
 
 ////////////////////
-static string WriteArrayToConsole(int[] NumbersArray)
+static void WriteArrayToConsole(int[] NumbersArray)
 {
     Console.Write("[");
     for (int i = 0; i < NumbersArray.Length - 1; i++)
     {
         Console.Write($"{NumbersArray[i]}, ");
     }
-    string writeArray = $"{NumbersArray[NumbersArray.Length - 1]}]";
+    Console.Write($"{NumbersArray[NumbersArray.Length - 1]}]");
 
-    return writeArray;
+    return;
 }
