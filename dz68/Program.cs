@@ -4,7 +4,7 @@
 // m = 3, n = 2 -> A(m,n) = 29
 
 Console.Clear();
-Console.WriteLine("Для вычисления функции Аккермана введите целые положительные числа:");
+Console.WriteLine("Для вычисления функции Аккермана введите целые неотрицательные числа:");
 int m = NumberInput("m = ");
 int n = NumberInput("n = ");
 Console.WriteLine($"A({m},{n}) = {AkkermanResult(m, n)}");
@@ -17,7 +17,7 @@ static int NumberInput(string welcome)
         while (true)
         {
             Console.Write(welcome);
-            if(int.TryParse(Console.ReadLine(), out n) && n != 0) break;
+            if(int.TryParse(Console.ReadLine(), out n) && n > 0) break;
             Console.WriteLine("Ошибка ввода!");
         }
         return n;
