@@ -17,7 +17,7 @@ DegreeSortRowsArray(newArray);
 Console.WriteLine();
 Print2DArray(newArray);
 
-//////////////////////////
+////////////////////////
 
 static void DegreeSortRowsArray(int[,] array)
 {
